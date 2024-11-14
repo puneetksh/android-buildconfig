@@ -3,6 +3,7 @@ import groovy.ui.SystemOutputInterceptor
 android {
   compileSdkVersion CONFIG.versions.android.sdk.compile
 
+  buildFeatures.buildConfig true
   defaultConfig {
     minSdkVersion CONFIG.versions.android.sdk.min
     targetSdkVersion CONFIG.versions.android.sdk.target
