@@ -56,7 +56,9 @@ def addJacocoTask(variant) {
     sourceDirectories.from(files(variant.sourceSets.kotlin.srcDirs.flatten()))
     def kotlinTask = tasks.getByName("compile${variantName}Kotlin")
     if(kotlinTask) {
-      classDirectories += fileTree(dir: kotlinTask.destinationDir, excludes: excludedFiles)
+//      classDirectories += fileTree(dir: kotlinTask.destinationDir, excludes: excludedFiles)
+      classDirectories += fileTree(dir: kotlinTask.destinationDirectory.get(), excludes: excludedFiles)
+
     }
   }
 
